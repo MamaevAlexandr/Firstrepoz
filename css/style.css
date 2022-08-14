@@ -1,5 +1,7 @@
 /* Обнуление
 ===========*/
+
+/* Выноси нормализацию в отдельный файл и подключай перед основными стилями */
 * {
     padding: 0;
     margin: 0;
@@ -36,6 +38,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 @font-face {
     font-family:'Gilroy';
     src: url(../fonts/Gilroy-ExtraBold.otf);  
+    /* в правиле font-face нужно добавлять вес шрифта font-weight и отображение шрифта font-display.
+     Так же лучше использовать формат шрифта .woff. Можешь конвертировать шрифт в woff на сайте https://transfonter.org/ */
 }
 @font-face {
     font-family: 'Gilroy';
@@ -65,6 +69,7 @@ body{
 .gorizontal-solid{
     border: 1px solid #828282;
     transform: matrix(1, 0, 0, 1, 0, 0);
+    /* margin: 40px 0 0 */
     margin: 40px 0 0 0;
 }
 .head__info{
@@ -77,6 +82,7 @@ body{
     width: 123px;
     height: 118px;
     font-size: 47px;
+    /* line-height лучше указывать в процентах или коэффициентом. Дели пиксельное значение на размр шрифта элемента. 59/47=1,25 или 125% */
     line-height: 59px;
     font-weight: bold;
 }
@@ -92,19 +98,24 @@ body{
     width: 65px;
     height: 20px;
     
+    /* position: relative; здесь не нужен */
     position: relative;
     transform: rotate(270deg);
+    /* margin: 0 0 20px; */
     margin: 0 0 20px 0;
 }
 .head__info-leftru{
+  /* text-transform можно задать родительскому элементу */
     text-transform: uppercase;
     color: #828282;
+
 }
 
 .head__info-lefteu{
     text-transform: uppercase;
     
     color:#000000;
+    /* Зачем position fixed? */
     position:fixed;
     padding: 0 0 0 30px;
     
@@ -124,13 +135,16 @@ body{
     align-items: center;
 }
 .h2__all-block{
+  /* У тебя нет такого шрифта. Для задания жирного текста нужно указать font-weight */
     font-family: 'Gilroy-Bold';
     font-size: 34px;
     line-height: 42px;
+    /* используй HEX или rgb выражения для цветов */
     color: Black;
     text-align: center;
 
 }
+/* 3 блока с одинаковыми стилями */
 .block__about-txtp1{
     font-size: 18px;
     color: Black;
@@ -153,7 +167,9 @@ body{
     margin: 20px 0 0 0;
 }
 
+
 .skils__info-block{
+  /* Зачем тут флексы, если элементы друг под другом? */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,6 +177,9 @@ body{
 .skils__info-txt{
     font-size: 18px;
     color: #070707;
+    
+  /* Если уберешь флексы то отрицательные margin будут не нужны. Вобще отрицательные margin лучше 
+  не использовать без крайней необходимости */
     margin: 100px 0 0 -140px;
 }
 .skils__info-prgrm{
@@ -201,6 +220,7 @@ body{
 	text-shadow: 1px 1px #bbb;
 }
 .rating-result1 span::before{
+  /* Певдоэлемент необязателен, можешь использовать svg в разметке */
     content: '★';
 }
 .rating-result1 span.active {
@@ -228,7 +248,9 @@ body{
 }
 .Portfolio {
     width: 1445px;
+    /* фиксированая высота может помешать адаптиву, старайся обходитьсся без нее. С шириной та же история */
     height: 2255px;
+    /* флексы тебе не нужны здесь */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -281,6 +303,7 @@ body{
     justify-content: space-between;
     margin: 80px 0 0 0;
 }
+/* одинаковые стили, обьедени через запятую */
 .btm_in:hover{
     background: grey;
 }

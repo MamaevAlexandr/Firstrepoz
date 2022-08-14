@@ -11,15 +11,20 @@
             
                 <nav class="navigation-flex">
                     <a class="nav__home" href="#">Home</a>
+                    <!-- Для общей стилизации старайся использовать один класс, например all__nav стилизует все ссылки, nav__home стилизует отдельную сслыку.
+                    соответственно классы у ссылки Home должны быть all__nav и nav__home -->
                     <a class="all__nav" href="#">About me</a>
+                    <!-- Именование классов - блок__элемент, поменяй на nav__all -->
                     <a class="all__nav" href="#">Skills</a>
                     <a class="all__nav" href="#">Portfolio</a>
                     <a class="all__nav" href="#">Contacts</a>
                 </nav>
             
+                <!-- Это можно было сделать обычной рамкой -->
             <div class="gorizontal-solid"></div>
             <div class="head__info">
                 <div class="head__info-name">
+                    <!-- Соблюдай БЭМ, head__info-names -->
                 <h1 class="head-info-names">Denis
                     Novik</h1>
                 </div>
@@ -29,6 +34,7 @@
                         24 years old, Minsk</p>
                 </div>
                 <div class="head__info-lang">
+                    <!-- это должны быть кнопки или ссылки -->
                     <p class="head__info-leftru">ru</p>
                     
                     <p class="head__info-lefteu">|eng</p>
@@ -41,7 +47,9 @@
         <main>
             <div class="block__about">
                 <div class="block__about-txt">
+                    <!-- br использовать не обязательно, отступы можно сделать с помощью margin -->
                     <h2 class="h2__all-block">About me</h2><br>
+                    <!-- То же самое что выше - одинаковые элементы стилизуй одним классом -->
                     <p class="block__about-txtp1">Hi, I'm Denis – UX/UI designer from Minsk.<br> 
                         I'm interested in design and everything connected with it.</p><br>
                         
@@ -117,6 +125,7 @@
                 <h2 class="h2__all-block">Portfolio</h2>
                 <div class="portfolio__girl">
                     <img src="./img/portfolio/girl.png" alt="фото девушки">
+                    <!-- Эти элементы должны быть ссылками -->
                     <p class="portfolio__txt">Online fashion store - Homepage</p>
                 </div>
                 <div class="portfolio__rbk">
@@ -134,9 +143,11 @@
                 <h2 class="h2__all-block">Contacts</h2>
                 <p class="contacts__txt">Want to know more or just chat?<br>
                     You are welcome!</p>
+                    <!-- Это кнопка а не ссылка -->
                 <a class="contacts__btm" href="#" alt="#">Send message</a>
             </div>
             <div class="contacts__icon">
+                <!-- cntcts - используй понятные названия классов -->
                 <div class="cntcts__icon-img">
                 <a class="btm_in" href="#"> <img src="./img/icon/in.png" alt="icon in"></a>
                 <a class="btm_ints" href="#"><img src="./img/icon/inst.png" alt="icon inst"></a>
@@ -154,4 +165,26 @@
 
 
     </body>
+    <!-- 
+        ПО ВНЕШНЕМУ ВИДУ:
+        1. Не совпадает шрифт.
+        2. Общая ширина контента не задана. В макете 940px
+        3. Нет верхнего отступа у навигации
+        4.About me
+            4.1 Нет отступа сверху.
+            4.2 Серый фон должен растягиваться на всю ширину экрана.
+        5. Skills
+            5.1 Отступ сверху сильно меньше чем в макете
+            5.2 Ширина блока с картинками больше чем в макете
+        6.Portfolio
+            6.1 Нет отступа сверху
+            6.2 Серый фон должен растягиваться на всю ширину экрана.
+            6.3 Внутренний отступ меньше чем в макете
+        7. Контакты
+            7.1 Текст не выровнен по центру
+            7.2 Нет отступа снизу.
+            7.3 Ховер задан на ссылку, поэтому при наведении на картинку фон больше чем картинка
+
+
+     -->
 </html>
